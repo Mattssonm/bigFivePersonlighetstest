@@ -1,18 +1,49 @@
+h3 {
+  font-family: arial, sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+p {
+  font-family: arial, sans-serif;
+  font-size: 16px;
+}
+
 .question {
   background-color: lightyellow;
 }
-p {
+
+.question p {
   font-family: arial,sans-serif;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-.question input {
-  position: absolute;
-  opacity: 0;
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container img {
+  width: 30px;
+  height: 30px;
+  padding-left:15px;
+  padding-right:15px;
+}
+
+.container img:hover {
+  background: url("Knappar/knapp-ifylld.png") no-repeat;
   cursor: pointer;
-  height: 0;
-  width: 0;
+
 }
 
-.question label {
+.container p {
+  font-family: arial, sans-serif;
+  font-size: 18px;
   padding-left: 20px;
+  padding-right: 20px;
+}
+
+.checked {
+  display: none;
 }
