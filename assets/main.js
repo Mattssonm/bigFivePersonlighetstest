@@ -1,27 +1,23 @@
 window.addEventListener("load", () => {
-  console.log("Hello");
 
-let answers = {
-  one: 0,
-  two: 0
-};
+  let answers = {
+    one: 0,
+    two: 0
+  };
 
+  let uncheckedImgs = document.getElementsByClassName('unchecked');
+  let checkedImgs = document.getElementsByClassName('checked');
+  console.log(uncheckedImgs[0]);
 
+  uncheckedImgs[0].addEventListener("click", event => {
+    uncheckedImgs[0].classList.add("displayNone");
+    checkedImgs[0].classList.remove("displayNone");
+  });
 
-let radios = document.querySelectorAll('input[type="radio"]');
-console.log(radios);
+  checkedImgs[0].addEventListener("click", event => {
+    checkedImgs[0].classList.add("displayNone");
+    uncheckedImgs[0].classList.remove("displayNone");
+  });
 
-for (var i = 0; i < radios.length; i++) {
-  radios[i].addEventListener("click", event => {
-    console.log(this);
-  })
-}
-
-
-// questions[0].addEventListener("click", () => {
-//   console.log("uppdaterar objekt");
-//   console.log(this.);
-// })
-
-console.log(answers);
+  console.log(answers);
 })
