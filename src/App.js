@@ -1,6 +1,6 @@
 import React from 'react';
-import buttonFull from './assets/buttons/button-full.png';
 import './App.css';
+import Question from './components/Question.js'
 
 function App() {
   return (
@@ -13,15 +13,7 @@ function App() {
           påstående för att ange hur mycket påståendet stämmer eller inte stämmer.
         </p>
       </div>
-      <div class="question">
-        <p>2. Tenderar att hitta fel hos andra</p>
-        <div class="container">
-          <p>Håller inte med</p>
-          <img class="unchecked" src={buttonFull}/>
-          <img class="checked displayNone" src=""/>
-          <p>Håller med</p>
-        </div>
-      </div>
+      <Question />
     </div>
   );
 }
