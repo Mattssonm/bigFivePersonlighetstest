@@ -1,3 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: black;
+}
+
 h3 {
   font-family: arial, sans-serif;
   font-size: 32px;
@@ -7,44 +16,4 @@ h3 {
 p {
   font-family: arial, sans-serif;
   font-size: 16px;
-}
-
-.statement {
-  background-color: lightyellow;
-}
-
-.statement p {
-  font-family: arial,sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.displayNone {
-  display: none;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-}
-
-.container img {
-  width: 30px;
-  height: 30px;
-  padding-left:15px;
-  padding-right:15px;
-  transition: width 0.2s, height 0.2s;
-}
-
-.container img:hover {
-  cursor: pointer;
-  width: 35px;
-  height: 35px;
-}
-
-.container p {
-  font-family: arial, sans-serif;
-  font-size: 18px;
-  padding-left: 20px;
-  padding-right: 20px;
 }

@@ -1,0 +1,9 @@
+#traitProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#traitBar {
+  height: 30px;
+  background-color: green;
+}

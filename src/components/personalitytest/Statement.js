@@ -1,26 +1,12 @@
 import React from 'react';
-import buttonFull from '../../assets/buttons/button-full.png';
-import buttonEmpty from '../../assets/buttons/button-empty.png';
+import './Personalitytest.css'
+import Answerbuttons from  './Answerbuttons'
 
-function Statement({ statement, index}) {
-  function handleClick(event) {
-    event.preventDefault()
-    console.log(this);
-  }
+export default function Statement({ statement, index}) {
   return (
     <div key={index} className="statement">
       <p>{statement}</p>
-      <div className="container">
-        <p>Håller inte med</p>
-        <img onClick={handleClick} src={buttonEmpty} />
-        <img src={buttonEmpty}/>
-        <img src={buttonEmpty}/>
-        <img src={buttonEmpty}/>
-        <img src={buttonEmpty}/>
-        <p>Håller med</p>
-      </div>
+      <Answerbuttons />
     </div>
   )
 }
-
-export default Statement;

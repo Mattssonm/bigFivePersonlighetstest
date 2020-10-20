@@ -1,0 +1,49 @@
+.statement {
+  border: solid 1px gray
+}
+
+.statement p {
+  font-family: arial,sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.displayNone {
+  display: none;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container img {
+  width: 30px;
+  height: 30px;
+  padding-left:15px;
+  padding-right:15px;
+  transition: width 0.2s, height 0.2s;
+}
+
+.container img:hover {
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+}
+
+.container p {
+  font-family: arial, sans-serif;
+  font-size: 18px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#testProgress {
+  width: 100%;
+  background-color: grey;
+}
+
+#testBar {
+  height: 30px;
+  background-color: green;
+}
