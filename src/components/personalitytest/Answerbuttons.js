@@ -5,14 +5,12 @@ import buttonEmpty from '../../assets/buttons/button-empty.png';
 
 export default function Answerbuttons() {
 	return (
-		<div className="container">
-			<p>Håller inte med</p>
+		<div className="flex-center buttonsContainer">
 			<img src={buttonEmpty} />
 			<img src={buttonEmpty}/>
 			<img src={buttonEmpty}/>
 			<img src={buttonEmpty}/>
 			<img src={buttonEmpty}/>
-			<p>Håller med</p>
 		</div>
 	)
 }

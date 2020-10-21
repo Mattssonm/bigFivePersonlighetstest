@@ -1,19 +1,60 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* || GENERAL STYLES || */
+
 body {
-  color: black;
+  color: rgb(24, 24, 24);
+  background-color: #FFFFFF;
 }
 
 h3 {
   font-family: arial, sans-serif;
-  font-size: 32px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 p {
   font-family: arial, sans-serif;
   font-size: 16px;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+div {
+  margin: 15px 0;
+}
+
+/* || UTILITIES */
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.displayNone {
+  display: none;
+}
+
+/* || SITEWIDE || */
+
+:root {
+  --primary-color: #779990;
+  --primary-dark-color: #4A6064;
+  --primary-darker-color: #40575C;
+  --secondary-color: #DB9D57;
+}
+
+#app {
+  width: 90%;
+  margin: 20px auto;
 }

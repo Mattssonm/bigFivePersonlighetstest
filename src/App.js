@@ -11,7 +11,7 @@ export default function App() {
   })
 
   return (
-    <div className="app">
+    <div id="app">
       <Introduction />
       <br />
       <Personalitytest />
