@@ -2,13 +2,13 @@ import React from 'react';
 import './Personalitytest.css'
 import Answerbuttons from  './Answerbuttons'
 
-export default function Statement({ statement, index }) {
+export default function Statement( { getState, updateState, statement, index } ) {
   return (
     <div key={index} className="statement">
       <p>{statement}</p>
-      <Answerbuttons />
-      <span>Håller med</span>
-      <span style={{float: "right"}}>Håller inte med</span>
+      <Answerbuttons index={index} updateState={updateState} getState={getState} />
+      <span className="agree">Instämmer</span>
+      <span className="disagree">Instämmer inte</span>
       <hr />
     </div>
   )

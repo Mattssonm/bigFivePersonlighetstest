@@ -4,15 +4,13 @@ import Traitdescription from './Traitdescription'
 import Traitpercentage from './Traitpercentage'
 
 export default function Traitlist(props) {
-  let jsx = []
-  console.log(props.traits);
-  props.traits.forEach(element => {
-    jsx.push(
-      <Traitdescription trait={element.trait} description={element.description}/>,
-      <Traitpercentage traitScore={element.traitScore}/>,
-      <br />
-      )
-  });
+
+  const jsx = props.traits.map(( element, index ) => {
+    return <div key={index}>
+        <Traitdescription trait={element.trait} description={element.description}/>
+        <Traitpercentage traitScore={element.traitScore}/>
+      </div>
+  })
   
   return <div>{jsx}</div>;
 }

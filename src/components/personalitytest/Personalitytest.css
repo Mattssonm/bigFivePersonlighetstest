@@ -1,18 +1,37 @@
+.buttonsContainer {
+  align-items: center;
+}
+
 .buttonsContainer img {
   width: 60px;
   height: 30px;
   padding: 0 15px;
-  /* transition: width 0.2s, height 0.2s; */
+  cursor: pointer;
 }
 
-.container img:hover {
-  cursor: pointer;
+.buttonsContainer img:first-child, .buttonsContainer img:last-child {
+  width: 74px;
+  height: 38px;
+}
+
+.buttonsContainer img:nth-child(2), .buttonsContainer img:nth-child(4) {
+  width: 68px;
+  height: 34px;
 }
 
 .statement p {
   text-align: center;
   font-weight: bold;
   color: rgb(54, 54, 54);
+}
+
+.agree {
+  color: var(--primary-color);
+}
+
+.disagree {
+  float: right;
+  color: var(--secondary-color);
 }
 
 #testProgress {
