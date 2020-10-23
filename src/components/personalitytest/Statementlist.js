@@ -54,7 +54,7 @@ export default function Statementlist(props) {
   const jsx = Object.entries(statements).map(([key, value]) => {
     // Pretty straightforward - use key for the key and value for the value.
     // Just to clarify: unlike object destructuring, the parameter names don't matter here.
-    return <Statement index={key} statement={value} updateState={props.updateState} getState={props.getState} />
+    return <Statement index={key} statement={value} updateAnswers={props.updateAnswers} getAnswers={props.getAnswers} />
   })
 
 	return <div>
