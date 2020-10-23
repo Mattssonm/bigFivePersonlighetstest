@@ -11,6 +11,19 @@ body {
   background-color: #FFFFFF;
 }
 
+
+p {
+  margin: 10px 0;
+}
+
+div {
+  margin: 15px 0;
+}
+
+hr {
+  margin: 20px 0;
+}
+
 h3 {
   font-family: arial, sans-serif;
   font-size: 20px;
@@ -20,14 +33,6 @@ h3 {
 p {
   font-family: arial, sans-serif;
   font-size: 16px;
-}
-
-hr {
-  margin: 20px 0;
-}
-
-div {
-  margin: 15px 0;
 }
 
 /* || UTILITIES */
@@ -55,6 +60,26 @@ div {
 }
 
 #app {
-  width: 90%;
-  margin: 20px auto;
+  width: 35%;
+  margin: 50px auto;
+}
+
+/* || MEDIA QUERIES || */
+
+@media screen and (max-width: 950px) {
+  #app {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 650px ) {
+  #app {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 450px ) {
+  #app {
+    width: 90%;
+  }
 }
