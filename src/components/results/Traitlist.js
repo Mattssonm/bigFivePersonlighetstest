@@ -7,8 +7,10 @@ export default function Traitlist(props) {
 
   const jsx = props.traits.map(( element, index ) => {
     return <div key={index}>
-        <Traitdescription trait={element.trait} description={element.description}/>
+        <h2 className="align-center">{element.trait}</h2>
         <Traitpercentage traitScore={element.traitScore}/>
+        <Traitdescription trait={element.trait} description={element.description}/>
+        <hr />
       </div>
   })
   

@@ -1,5 +1,13 @@
 /*
-  -- Component structure --
+  -- App overview --
+  The app consists of three main pages: Introduction, Personalitytest and Results. 
+  App owns state and the state data flows up and down through the Personalitytests components, when the 
+  user fills in the test. When the user is done, the Personalitytest component calls 
+  the functions (in the logic folder) so the testResults state get updated 
+  to finally show the results on the Results page. Button is the only component
+  used in more than one page.  
+
+-- Component structure --
 
   App (stateful)
     *Introduction (page)
@@ -14,14 +22,6 @@
 
   sitewide
     Button
-
-  -- Explanation --
-  The app consists of three main pages: Introduction, Personalitytest and Results. 
-  App owns state and the state data flows up and down to answerbuttons, when the 
-  user fills in the test. When the user is done, the Personalitytest component calls 
-  the calculateResults function (in the logic folder) with the answers as argument 
-  to finally show the results on the Results page. Button is the only component
-  used in more than one page.
 */
 
 import React, { useState } from 'react'
@@ -31,6 +31,9 @@ import Introduction from './components/introduction/Introduction.js'
 import Personalitytest from './components/personalitytest/Personalitytest.js'
 import Results from './components/results/Results'
 
+import { calculateResults } from './logic/calculateResults.js'
+import { resultsIntoPercent } from './logic/resultsIntoPercent.js'
+
 export default function App() {
   //initialize state
   const [answers, setAnswers] = useState({
@@ -38,6 +41,8 @@ export default function App() {
   })
 
   const [page, setPage] = useState("intro")
+
+  const [testResults, setTestResults] = useState([0, 0, 0, 0, 0]);
 
   //functions to update state
   function updateAnswers( key, value ) {
@@ -50,6 +55,17 @@ export default function App() {
     setPage(page);
   } 
 
+  function updateResults(results) {
+    setTestResults(results);
+  }
+
+  function showResults() {
+    //check if all answers has been filled in
+
+    updateResults(resultsIntoPercent(calculateResults(answers)));
+    updatePage("results");
+  }
+
   //the page state is used to render the pages conditionally
   return (
     <div id="app">
@@ -57,8 +73,8 @@ export default function App() {
         page === "intro" 
         ? <Introduction updatePage={updatePage} />
         : page === "test"
-          ? <Personalitytest updatePage={updatePage} updateAnswers={updateAnswers} getAnswers={answers} />
-          : <Results />
+          ? <Personalitytest showResults={showResults} updatePage={updatePage} updateAnswers={updateAnswers} getAnswers={answers} />
+          : <Results testResults={testResults}/>
       } 
     </div>
   )
