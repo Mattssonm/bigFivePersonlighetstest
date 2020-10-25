@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/bigfivepersonlighetstest/static/css/main.baf2465c.chunk.css",
+    "main.js": "/bigfivepersonlighetstest/static/js/main.4b1d49ff.chunk.js",
+    "main.js.map": "/bigfivepersonlighetstest/static/js/main.4b1d49ff.chunk.js.map",
+    "runtime-main.js": "/bigfivepersonlighetstest/static/js/runtime-main.5cc4258d.js",
+    "runtime-main.js.map": "/bigfivepersonlighetstest/static/js/runtime-main.5cc4258d.js.map",
+    "static/js/2.63833b1c.chunk.js": "/bigfivepersonlighetstest/static/js/2.63833b1c.chunk.js",
+    "static/js/2.63833b1c.chunk.js.map": "/bigfivepersonlighetstest/static/js/2.63833b1c.chunk.js.map",
+    "index.html": "/bigfivepersonlighetstest/index.html",
+    "precache-manifest.f2c8481f3ec14c888b1c69090cee6008.js": "/bigfivepersonlighetstest/precache-manifest.f2c8481f3ec14c888b1c69090cee6008.js",
+    "service-worker.js": "/bigfivepersonlighetstest/service-worker.js",
+    "static/css/main.baf2465c.chunk.css.map": "/bigfivepersonlighetstest/static/css/main.baf2465c.chunk.css.map",
+    "static/js/2.63833b1c.chunk.js.LICENSE.txt": "/bigfivepersonlighetstest/static/js/2.63833b1c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5cc4258d.js",
+    "static/js/2.63833b1c.chunk.js",
+    "static/css/main.baf2465c.chunk.css",
+    "static/js/main.4b1d49ff.chunk.js"
+  ]
+}
