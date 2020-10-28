@@ -4,13 +4,10 @@ button {
   color: white;
   border: none;
   margin: 15px 5px;
+  background-color: var(--secondary-color);
 }
 
 button:hover {
   cursor: pointer;
-}
-
-.primary-btn {
-  background-color: var(--secondary-color);
 }
 

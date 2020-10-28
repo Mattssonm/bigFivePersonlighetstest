@@ -43,3 +43,16 @@
   height: 30px;
   background-color: var(--primary-color);
 }
+
+.nextButton {
+  grid-column-start: 3;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.grid-container {
+  display: grid; 
+  grid-template-columns: 30% 40% 30%;
+}

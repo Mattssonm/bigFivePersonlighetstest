@@ -4,9 +4,7 @@
   App owns state and the state data flows up and down through the Personalitytests components, when the 
   user fills in the test. When the user is done, the Personalitytest component calls 
   the functions (in the logic folder) so the testResults state get updated 
-  to finally show the results on the Results page. Button is the only component
-  used in more than one page.  
-
+  to finally show the results on the Results page. 
 -- Component structure --
 
   App (stateful)
@@ -22,6 +20,7 @@
 
   sitewide
     Button
+    ErrorMessage
 */
 
 import React, { useState } from 'react'
@@ -44,6 +43,11 @@ export default function App() {
 
   const [testResults, setTestResults] = useState([0, 0, 0, 0, 0]);
 
+    //44 questions, 5 questions on each page (4 on last), 9 pages
+  const [pagination, setPagination] = useState(1);
+
+  const [errorMessage, setErrorMessage] = useState("");
+
   //functions to update state
   function updateAnswers( key, value ) {
     setAnswers(prevState => {
@@ -59,8 +63,23 @@ export default function App() {
     setTestResults(results);
   }
 
+  function incrementPagination() {
+    setPagination(prevPagination => prevPagination + 1);
+  }
+
+  function decrementPagination() {
+    setPagination(prevPagination => prevPagination - 1);
+    setErrorMessage("");
+  }
+
   function showResults() {
     //check if all answers has been filled in
+    for (let answer of Object.entries(answers)) {
+      if(answer[1] === 0) {
+        setErrorMessage("Du har inte svarat på alla frågor")
+        return
+      }
+    }
 
     updateResults(resultsIntoPercent(calculateResults(answers)));
     updatePage("results");
@@ -73,9 +92,18 @@ export default function App() {
         page === "intro" 
         ? <Introduction updatePage={updatePage} />
         : page === "test"
-          ? <Personalitytest showResults={showResults} updatePage={updatePage} updateAnswers={updateAnswers} getAnswers={answers} />
+          ? <Personalitytest 
+              showResults={showResults} 
+              updatePage={updatePage} 
+              updateAnswers={updateAnswers} 
+              incrementPagination={incrementPagination}
+              decrementPagination={decrementPagination}
+              getAnswers={answers}
+              getPagination={pagination}
+              getErrorMessage={errorMessage}
+            />
           : <Results testResults={testResults}/>
-      } 
+      }
     </div>
   )
 }

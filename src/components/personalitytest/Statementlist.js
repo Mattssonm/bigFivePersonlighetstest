@@ -1,8 +1,15 @@
 import React from 'react';
 import './Personalitytest.css'
 import Statement from './Statement'
+import Button from '../sitewide/Button'
 
-export default function Statementlist(props) {
+export default function Statementlist({
+  updateAnswers,
+  getAnswers,
+  incrementPagination,
+  decrementPagination,
+  getPagination
+}) {
 
   const statements = {
     1: "Är pratsam",  
@@ -51,15 +58,27 @@ export default function Statementlist(props) {
     44: "Har en utvecklad smak för konst, musik eller litteratur" 
   }
   
-  //loop over every object entry and return Statement
-  const jsx = Object.entries(statements).map(([key, value]) => {
-    return <Statement index={key} statement={value} updateAnswers={props.updateAnswers} getAnswers={props.getAnswers} />
-  })
+  const indexOfLastStatement = getPagination * 5;
+  const indexOfFirstStatement = indexOfLastStatement - 5;
+  const currentStatements = Object.entries(statements).slice(indexOfFirstStatement, indexOfLastStatement);
+  const jsx = currentStatements.map( statement => (
+    <Statement 
+      index={statement[0]}
+      statement={statement[1]} 
+      updateAnswers={updateAnswers} 
+      getAnswers ={getAnswers}
+    />
+  )) 
+
 
 	return <div>
     <p className="align-center">Jag ser mig själv som någon som...</p>
 		<div className="statementList">
 			{jsx}
 		</div>
+    <div className="grid-container">
+      { getPagination !== 1 ? <Button text="Bakåt" handleClick={decrementPagination} /> : <></> }
+      { getPagination !== 9 ? <Button text="Nästa" handleClick={incrementPagination} classes={"nextButton"} /> : <></> }
+    </div>
   </div>
 }
