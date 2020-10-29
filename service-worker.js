@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/bigfivepersonlighetstest/precache-manifest.f2c8481f3ec14c888b1c69090cee6008.js"
+  "/bigfivepersonlighetstest/precache-manifest.a3535fd98ca84cfebf20703e2209f293.js"
 );
 
 self.addEventListener('message', (event) => {
