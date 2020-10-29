@@ -58,23 +58,25 @@ export default function Statementlist({
     44: "Har en utvecklad smak för konst, musik eller litteratur" 
   }
   
+  //Pagination logic
   const indexOfLastStatement = getPagination * 5;
   const indexOfFirstStatement = indexOfLastStatement - 5;
   const currentStatements = Object.entries(statements).slice(indexOfFirstStatement, indexOfLastStatement);
-  const jsx = currentStatements.map( statement => (
-    <Statement 
-      index={statement[0]}
-      statement={statement[1]} 
-      updateAnswers={updateAnswers} 
-      getAnswers ={getAnswers}
-    />
-  )) 
-
 
 	return <div>
     <p className="align-center">Jag ser mig själv som någon som...</p>
 		<div className="statementList">
-			{jsx}
+      {
+        currentStatements.map( statement => (
+          <Statement 
+            key={statement[0]}
+            index={statement[0]}
+            statement={statement[1]} 
+            updateAnswers={updateAnswers} 
+            getAnswers ={getAnswers}
+          /> 
+        ))
+      }
 		</div>
     <div className="grid-container">
       { getPagination !== 1 ? <Button text="Bakåt" handleClick={decrementPagination} /> : <></> }
